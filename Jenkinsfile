@@ -33,9 +33,9 @@ pipeline {
             }
         }
 
-        stage('Restart Apache') {
+        stage('Restart Nginx') {
             steps {
-                sh "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_HOST} 'sudo systemctl restart apache2'"
+                sh "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_HOST} 'sudo systemctl restart nginx'"
             }
         }
 
