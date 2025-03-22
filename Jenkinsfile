@@ -4,7 +4,7 @@ pipeline {
     environment {
         REMOTE_HOST = "192.168.0.90"      
         REMOTE_USER = "khajiit"      
-        DEPLOY_PATH = "/var/www/mywebsite
+        DEPLOY_PATH = "/var/www/html
 "       
     }
 
