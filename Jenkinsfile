@@ -53,6 +53,19 @@ pipeline {
                 }
             }
         }
+        stage('Validate HTML') {
+            steps {
+                sh '''
+                    tidy -errors -quiet index.html > /dev/null 2> tidy_errors.txt || true
+                    if [ -s tidy_errors.txt ]; then
+                      echo "HTML має помилки:"
+                      cat tidy_errors.txt
+                      exit 1
+                    fi
+                '''
+            }
+        }
+
     }
 
     post {
